@@ -1,26 +1,41 @@
+  <!-- <div v-for="repo in allRepos" :key="repo.id">{{repo.name}}</div> -->
+  <!-- <div v-for="commit in allCommits" :key="commit.sha">{{commit.sha}}</div> -->
+  <!-- <div>{{user.name}} {{user.bio}} {{user.avatar}}</div> -->
+
+
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <Header/>
+    <router-view/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/Header";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Header
+  },
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import './theme.scss';
+
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+
+  a {
+      text-decoration: none;
+      color: #fff
+  }
+
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    text-align: center;
+  }
 </style>
